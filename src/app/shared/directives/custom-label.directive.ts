@@ -55,7 +55,7 @@ export class CustomLabelDirective implements OnInit {
       const min = this._errors!['minlength']['requiredLength'];
       const current = this._errors!['minlength']['actualLength']
 
-      this.htmlElement.nativeElement.innerText = `EL camp ha de ser mínim de ${min} i en te ${current} caràcters`;
+      this.htmlElement.nativeElement.innerText = `EL camp ha de ser mínim de ${min} caràcters i en te ${current}`;
       return;
     }
     if (errors.includes('email')) {

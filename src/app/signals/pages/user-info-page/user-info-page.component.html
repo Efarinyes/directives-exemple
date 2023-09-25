@@ -1,0 +1,20 @@
+<h1>Informació Usuari</h1>
+<hr>
+
+<div class="row">
+  <div class="col-4">
+    <h3>Usuari actual: {{ userId() }} </h3>
+    <button (click)="loadUser(userId()-1) " class="btn btn-primary">Usuari anterior</button>
+    &nbsp;
+    <button (click)="loadUser( userId() +1 )" class="btn btn-success">Usuari següent</button>
+  </div>
+  <div class="col-8" *ngIf="currentUser()">
+    <h3>Usuari</h3>
+    <p>Correu: {{ currentUser()!.email }} </p>
+    <p>Nom: {{ fullName()}} </p>
+    <img [src]="currentUser()!.avatar" alt="Avatar" class="rounded">
+  </div>
+  <div class="col-8 text-danger" *ngIf="!userWasFound()">
+    <h3> Usuari no trobat </h3>
+  </div>
+</div>
